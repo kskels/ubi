@@ -1,0 +1,1 @@
+clang main.cpp -I /opt/sphinx/pocket/0.7/include/pocketsphinx -I /opt/sphinx/pocket/0.7/include -I /opt/sphinx/base/0.7/include/sphinxbase -I /opt/sphinx/base/0.7/include -L /opt/sphinx/base/0.7/lib -L /opt/sphinx/pocket/0.7/lib -lpocketsphinx -lsphinxbase -lsphinxad
