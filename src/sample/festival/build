@@ -1,0 +1,1 @@
+clang main.cpp -I /usr/include/festival  -I /usr/include/speech_tools -lFestival -lestools -lestbase -leststring
