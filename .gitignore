@@ -2,3 +2,4 @@ a.out
 *.swp
 *.pb.h
 *.pb.cc
+src/device/sphinx/tool

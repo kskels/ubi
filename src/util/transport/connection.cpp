@@ -4,6 +4,8 @@
 #include <log.hpp>
 #include <core.pb.h>
 
+#include <google/protobuf/text_format.h>
+
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -59,6 +61,11 @@ void Connection::disconnect() {
 }
 
 void Connection::send(const UbiMessage &message) {
+  // pretty print the message
+  std::string output;
+  google::protobuf::TextFormat::PrintToString(message, &output);
+  Log(DEBUG) << "UbiMessage: \n" << output;
+
   std::stringstream ss;
   message.SerializeToOstream(&ss);
 
@@ -113,6 +120,7 @@ UbiMessage *Connection::receive(UbiMessage &message) {
     _state = false;
     return 0;
   }
+  Log(DEBUG) << "Received data in " << n << " bytes";
 
   std::stringstream ss;
   for (int i(0); i != size; ++i)

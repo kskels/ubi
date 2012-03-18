@@ -9,26 +9,32 @@
 #include <sstream>
 
 
+// Command line tool for sending the test commands towards the big brain.
+// It uses Google Protocol Buffers and Berkley sockets for the transport.
+//
+// usage: ./tool word[1] word[2] .. word[n]
+
 int main(int argc, char* argv[]) {
-  // init log to the terminal printouts 
+  // init the log to cosole printouts
   Log::registerConsumer(Log::ToCoutConsumer());
 
   if (argc < 2) {
-    Log(INFO) << "Enter at least one word as a command line argument";
+    Log(INFO) << "usage: ./tool word[1] word[2] .. word[n]";
     return -1;
   }
 
   Connection connection("localhost", 19292);
   connection.connect(); // move to constructor?
 
-  if (!connection.state())
+  if (!connection.state()) {
+    Log(INFO) << "Big brain started on the correct port?";
     return -1;
+  }
 
   SphinxMessage::Words words;
   for (int i(1); i != argc; ++i) {
     words.add_word(argv[i]);
   }
-
   SphinxMessage sphinx;
   *(sphinx.mutable_words()) = words;
 

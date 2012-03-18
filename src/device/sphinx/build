@@ -1,1 +1,1 @@
-clang++ main.cpp ../../util/logging/log.cpp ../../util/transport/connection.cpp -I ../../util/transport/ ../../util/protobuf/core.pb.cc ../../util/protobuf/sphinx.pb.cc -I ../../util/logging -I ../../util/protobuf -lprotobuf
+clang++ main.cpp -o tool ../../util/logging/log.cpp ../../util/transport/connection.cpp -I ../../util/transport/ ../../util/protobuf/core.pb.cc ../../util/protobuf/sphinx.pb.cc -I ../../util/logging -I ../../util/protobuf -lprotobuf
