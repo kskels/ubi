@@ -13,6 +13,11 @@ int main(int argc, char* argv[]) {
   // init log to the terminal printouts 
   Log::registerConsumer(Log::ToCoutConsumer());
 
+  if (argc < 2) {
+    Log(INFO) << "Enter at least one word as a command line argument";
+    return -1;
+  }
+
   Connection connection("localhost", 19292);
   connection.connect(); // move to constructor?
 
@@ -20,10 +25,9 @@ int main(int argc, char* argv[]) {
     return -1;
 
   SphinxMessage::Words words;
-  words.add_word("go");
-  words.add_word("forward");
-  words.add_word("10");
-  words.add_word("meters");
+  for (int i(1); i != argc; ++i) {
+    words.add_word(argv[i]);
+  }
 
   SphinxMessage sphinx;
   *(sphinx.mutable_words()) = words;
