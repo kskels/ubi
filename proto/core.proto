@@ -1,0 +1,16 @@
+
+message Ubi {
+  enum Type {
+    DATAFLOW = 0;
+    REQUEST = 1;
+    RESPONSE = 2;
+  }
+  message Payload {
+    required string name = 1;
+    required bytes data = 2;
+  }
+  required Type type = 1;
+  optional string id = 2;
+  required Payload payload = 3;
+}
+

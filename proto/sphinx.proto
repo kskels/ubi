@@ -1,0 +1,8 @@
+
+message Sphinx {
+  message Words {
+    repeated string word = 1;
+  }
+  required Words words = 1;
+}
+
