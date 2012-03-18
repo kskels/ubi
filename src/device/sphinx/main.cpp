@@ -1,8 +1,9 @@
 
 #include <connection.hpp>
+#include <log.hpp>
+
 #include <core.pb.h>
 #include <sphinx.pb.h>
-#include <log.hpp>
 
 #include <iostream>
 #include <sstream>
