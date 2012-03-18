@@ -1,7 +1,7 @@
 
 message Sphinx {
   message Words {
-    repeated string word = 1;
+    repeated string word = 1 [packet=true];
   }
   required Words words = 1;
 }
