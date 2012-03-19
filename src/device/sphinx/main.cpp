@@ -3,7 +3,7 @@
 #include <log.hpp>
 
 #include <core.pb.h>
-#include <sphinx.pb.h>
+#include <speech.pb.h>
 
 #include <iostream>
 #include <sstream>
@@ -31,15 +31,15 @@ int main(int argc, char* argv[]) {
     return -1;
   }
 
-  SphinxMessage::Words words;
+  SpeechMessage::Words words;
   for (int i(1); i != argc; ++i) {
     words.add_word(argv[i]);
   }
-  SphinxMessage sphinx;
+  SpeechMessage sphinx;
   *(sphinx.mutable_words()) = words;
 
   UbiMessage::Payload payload;
-  payload.set_name("SphinxMessage");
+  payload.set_name("SpeechMessage");
   std::stringstream ss;
   sphinx.SerializeToOstream(&ss);
   payload.set_data(ss.str());

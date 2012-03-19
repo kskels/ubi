@@ -1,4 +1,4 @@
 #!/bin/bash
 cd ../../../proto
 protoc --cpp_out=../src/util/protobuf core.proto
-protoc --cpp_out=../src/util/protobuf sphinx.proto
+protoc --cpp_out=../src/util/protobuf speech.proto

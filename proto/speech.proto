@@ -1,5 +1,5 @@
 
-message SphinxMessage {
+message SpeechMessage {
   message Words {
     repeated string word = 1;
   }
