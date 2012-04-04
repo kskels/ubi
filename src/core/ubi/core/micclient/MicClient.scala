@@ -8,13 +8,7 @@ import ubi.core.micclient.messages.DataPacket;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-class MicClient extends ActionListener with SubscriberHandler with Actor {
-    override def actionPerformed(e : ActionEvent) {
-        println("Do something");  
-    }
-
-    def act() {}
-
+class MicClient extends PluginBase("MicClient") {
     def notifySubscribers() {
         if (subscribers.isEmpty) return;
         var packet = new DataPacket();
