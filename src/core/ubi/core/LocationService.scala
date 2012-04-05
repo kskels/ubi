@@ -12,7 +12,16 @@ class LocationService {
       plugins.put(name, plugin);
     }
 
-    def findActor(name : String) : Option[PluginBase] = {
-        plugins.get(name);
+    def subscribe(subscriber : PluginBase, services : List[String]) : List[String] = {
+        var failed : List[String] = List();
+        for (service <- services) {
+            val result = plugins.get(service);
+            if (result.isDefined) {
+                result.get.subscribers.add(subscriber);
+            } else {
+                failed = service :: failed;
+            }
+        }
+        failed;
     }
 }

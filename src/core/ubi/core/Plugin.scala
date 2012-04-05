@@ -1,6 +1,6 @@
 package ubi.core
 
-trait IPlugin {
+trait Plugin {
     def register();
     def initialize();
 }

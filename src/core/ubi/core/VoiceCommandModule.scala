@@ -7,10 +7,7 @@ import ubi.log.LogLevel._;
 
 class VoiceCommandModule extends PluginBase("VoiceCommandModule") {
     override def initialize() {
-        val actor = Globals.locationService.findActor("MicClient");
-        if (actor.isDefined) {
-            actor.get.subscribers.add(this);
-        }
+        Globals.locationService.subscribe(this, List("MicClient"));
     }
 
     override def act() {
