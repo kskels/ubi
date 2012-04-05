@@ -2,7 +2,13 @@ package ubi.core
 
 class PluginHandler {
     def initialize() {
-        new MicClient().register(Globals.locationService);
-        new VoiceCommandModule().register(Globals.locationService);
+        val micClient = new MicClient();
+        val voiceCommandModule = new VoiceCommandModule();
+        micClient.register();
+        voiceCommandModule.register();
+        micClient.initialize();
+        voiceCommandModule.initialize();
+        micClient.start();
+        voiceCommandModule.start();
     }
 }
