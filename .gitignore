@@ -3,5 +3,6 @@ a.out
 *.pb.h
 *.pb.cc
 src/device/sphinx/tool
-bin
+.idea
 .cache
+core/bin
