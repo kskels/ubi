@@ -2,8 +2,8 @@ package ubi.plugins
 
 import ubi.log.Log
 import ubi.log.LogLevel._
-import ubi.core.micclient.DataPacket
 import akka.actor.Actor
+import ubi.core.micclient.DataPacket
 
 class WeatherApp extends Actor {
     def receive = {

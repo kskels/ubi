@@ -2,25 +2,28 @@ package ubi.core.voicecommand
 
 import ubi.log.Log
 import ubi.log.LogLevel._
-import ubi.core.micclient.DataPacket
 import collection.mutable.HashMap
-import collection.mutable.Set
-import akka.actor.Actor
+import collection.immutable.List
+import ubi.core.micclient.DataPacket
+import akka.actor.{ActorRef, Actor}
 
 class VoiceCommandModule extends Actor {
-    val _subscribers = Set[Actor]();
-    val _commandHandlers = new HashMap[String, Actor]();
+    var _subscribers = List[ActorRef]();
+    val _commandHandlers = new HashMap[String, ActorRef]();
     var _inputSession: Session = null;
     val _outputSessions: List[Session] = List();
 
     def receive = {
-        case msg: DataPacket => {
-            Log.log(INFO, "Received data: " + msg.words);
-            val isReset = isResetPresent(msg.words);
+        case Subscribe(subscriber) => {
+            Log.log(INFO, "Subscriber added: " + subscriber);
+            _subscribers = subscriber :: _subscribers;
         }
-        case msg => {
-            Log.log(INFO, "Unknown data received, ignoring");
+        case DataPacket(words) => {
+            Log.log(INFO, "Received data: " + words);
+            val isReset = isResetPresent(words);
         }
+        case msg =>
+            Log.log(INFO, "Unknown data received, ignoring: " + msg);
     }
 
     def notifySubscribers(list: List[String]) {

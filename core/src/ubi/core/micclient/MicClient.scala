@@ -1,12 +1,11 @@
 package ubi.core
 
-import micclient.DataPacket
-import scala.collection.mutable.Set
+import micclient.{DataPacket, Subscribe}
 import scala.collection.immutable.List
-import akka.actor.Actor
+import akka.actor.{ActorRef, Actor}
 
 class MicClient extends Actor {
-    val _subscribers = Set[Actor]();
+    var _subscribers = List[ActorRef]();
 
     def notifySubscribers(list : List[String]) {
         if (_subscribers.isEmpty) return;
@@ -16,9 +15,7 @@ class MicClient extends Actor {
     }
 
     def receive = {
-        while(true) {
-            Thread.sleep(1000);
-            notifySubscribers(List("McHalls", "was", "here"));
-        }
+        case Subscribe(subscriber) =>
+            _subscribers = subscriber :: _subscribers;
     }
 }
