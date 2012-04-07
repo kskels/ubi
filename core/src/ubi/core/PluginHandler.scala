@@ -1,15 +1,21 @@
 package ubi.core
 
-import akka.actor.{Props, ActorSystem}
+import scala.collection.immutable.List
 import micclient.MicClient
 import ubi.plugins.WeatherApp
 import voicecommand.VoiceCommandModule
+import ubi.protocols.Start
+import akka.actor.{ActorRef, Props, ActorSystem}
 
 class PluginHandler {
     def initialize() {
         val system = ActorSystem("Ubi");
-        val micClient = system.actorOf(Props[MicClient], name = "MicClient");
-        val voiceCommandModule = system.actorOf(Props[VoiceCommandModule], name = "VoiceCommandModule");
-        val weatherApp = system.actorOf(Props[WeatherApp], name = "WeatherApp");
+        var actors = List[ActorRef]();
+        actors = system.actorOf(Props[MicClient], name = "MicClient") :: actors;
+        actors = system.actorOf(Props[VoiceCommandModule], name = "VoiceCommandModule") :: actors;
+        actors = system.actorOf(Props[WeatherApp], name = "WeatherApp") :: actors;
+        for (actor <- actors) {
+            actor ! Start();
+        }
     }
 }
