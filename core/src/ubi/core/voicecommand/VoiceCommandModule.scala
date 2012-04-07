@@ -4,14 +4,23 @@ import ubi.log.Log
 import ubi.log.LogLevel._
 import collection.mutable.HashMap
 import collection.immutable.List
-import ubi.core.micclient.DataPacket
 import akka.actor.{ActorRef, Actor}
+import ubi.core.micclient.DataPacket
+import ubi.protocols.UbiMessage
+
+case class Subscribe(subscriber : ActorRef) extends UbiMessage
 
 class VoiceCommandModule extends Actor {
     var _subscribers = List[ActorRef]();
     val _commandHandlers = new HashMap[String, ActorRef]();
     var _inputSession: Session = null;
     val _outputSessions: List[Session] = List();
+
+    def notifySubscribers(list: List[String]) {
+        for (subscriber <- _subscribers) {
+            subscriber ! DataPacket(list);
+        }
+    }
 
     def receive = {
         case Subscribe(subscriber) => {
@@ -20,23 +29,9 @@ class VoiceCommandModule extends Actor {
         }
         case DataPacket(words) => {
             Log.log(INFO, "Received data: " + words);
-            val isReset = isResetPresent(words);
+            notifySubscribers(words);
         }
         case msg =>
             Log.log(INFO, "Unknown data received, ignoring: " + msg);
-    }
-
-    def notifySubscribers(list: List[String]) {
-        if (_subscribers.isEmpty) return;
-        for (subscriber <- _subscribers) {
-            subscriber ! DataPacket(list);
-        }
-    }
-
-    def isResetPresent(words: List[String]): Boolean = {
-        for (word <- words) {
-            if (word == Commands.ResetCommand) return true;
-        }
-        return false;
     }
 }
