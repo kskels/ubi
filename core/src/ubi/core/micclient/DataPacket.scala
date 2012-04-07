@@ -1,6 +1,6 @@
 package ubi.core.micclient
 
 import scala.collection.immutable.List
-import ubi.protocols.Header
+import ubi.protocols.UbiMessage
 
-class DataPacket(val header : Header, val words : List[String])
+case class DataPacket(val words : List[String]) extends UbiMessage

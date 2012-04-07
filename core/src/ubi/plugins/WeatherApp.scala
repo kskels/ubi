@@ -2,20 +2,12 @@ package ubi.plugins
 
 import ubi.log.Log
 import ubi.log.LogLevel._
-import ubi.core.{Globals, PluginBase}
 import ubi.core.micclient.DataPacket
+import akka.actor.Actor
 
-class WeatherApp extends PluginBase("WeatherApp") {
-    override def initialize() {
-        Globals.locationService.subscribe(this, List("VoiceCommandModule"));
-    }
-
-    override def act() {
-        while (true) {
-            receive {
-                case msg: DataPacket =>
-                    Log.log(INFO, "Received data: " + msg.words);
-            }
-        }
+class WeatherApp extends Actor {
+    def receive = {
+        case DataPacket(words) =>
+        Log.log(INFO, "Received data: " + words);
     }
 }

@@ -3,20 +3,20 @@ package ubi.core
 import micclient.DataPacket
 import scala.collection.mutable.Set
 import scala.collection.immutable.List
-import ubi.protocols.Header
+import akka.actor.Actor
 
-class MicClient extends PluginBase("MicClient") {
-    val _subscribers = Set[PluginBase]();
+class MicClient extends Actor {
+    val _subscribers = Set[Actor]();
 
     def notifySubscribers(list : List[String]) {
         if (_subscribers.isEmpty) return;
         for (subscriber <- _subscribers) {
-            subscriber ! new DataPacket(new Header(this, subscriber), list);
+            subscriber ! DataPacket(list);
         }
     }
 
-    override def act() {
-        loop {
+    def receive = {
+        while(true) {
             Thread.sleep(1000);
             notifySubscribers(List("McHalls", "was", "here"));
         }
