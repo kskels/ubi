@@ -1,25 +1,22 @@
 package ubi.plugins
 
-import ubi.log.Log
-import ubi.log.LogLevel._
-import akka.actor.Actor
 import ubi.core.micclient.DataPacket
-import ubi.protocols.Error._
-import ubi.protocols.{Error, Start}
+import ubi.protocols.{StartOk, Error, Start}
+import ubi.core.PluginBase
 
-class WeatherApp extends Actor {
+class WeatherApp extends PluginBase {
     def receive = {
-        case DataPacket(words) =>
-            Log.log(INFO, "Received data: " + words);
+        case DataPacket(words) => {}
         case Start() => {
             val vcModule = context.system.actorFor("VoiceCommandModule");
             if (vcModule == null) {
                 sender ! Error("VoiceCommandModule is not found, cannot subscribe");
             } else {
                 vcModule ! ubi.core.voicecommand.Subscribe();
+                sender ! StartOk();
             }
         }
         case msg =>
-            Log.log(INFO, "Unknown data received, ignoring: " + msg);
+            log.info("Unknown data received, ignoring: " + msg);
     }
 }

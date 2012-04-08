@@ -1,17 +1,15 @@
 package ubi.core.voicecommand
 
-import ubi.log.Log
-import ubi.log.LogLevel._
 import collection.mutable.HashMap
 import collection.immutable.List
-import akka.actor.{Actor}
 import ubi.core.micclient.DataPacket
-import akka.actor.{ActorRef, Props, ActorSystem}
-import ubi.protocols.{Error, Start, UbiMessage}
+import akka.actor.ActorRef
+import ubi.protocols.{StartOk, Error, Start, UbiMessage}
+import ubi.core.{PluginBase}
 
 case class Subscribe() extends UbiMessage
 
-class VoiceCommandModule extends Actor {
+class VoiceCommandModule extends PluginBase {
     var _subscribers = List[ActorRef]();
     val _commandHandlers = new HashMap[String, ActorRef]();
     var _inputSession: Session = null;
@@ -25,11 +23,9 @@ class VoiceCommandModule extends Actor {
 
     def receive = {
         case Subscribe() => {
-            Log.log(INFO, "Subscribe received from " + sender);
             _subscribers = sender :: _subscribers;
         }
         case DataPacket(words) => {
-            Log.log(INFO, "Received data: " + words);
             notifySubscribers(words);
         }
         case Start() => {
@@ -38,9 +34,10 @@ class VoiceCommandModule extends Actor {
                 sender ! Error("MicClient is not found, cannot subscribe");
             } else {
                 micClient ! ubi.core.micclient.Subscribe();
+                sender ! StartOk();
             }
         }
         case msg =>
-            Log.log(INFO, "Unknown data received, ignoring: " + msg);
+            log.info("Unknown data received, ignoring: " + msg);
     }
 }

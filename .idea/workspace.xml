@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4300e4d-662f-486d-809c-298f18fde50c" name="Default" comment="Adding Akka actors">
+    <list default="true" id="a4300e4d-662f-486d-809c-298f18fde50c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/mch.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application.conf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/ubi/core/CoreBase.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/ubi/core/Log.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/ubi/core/PluginBase.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/ubi/core/SystemHandler.scala" />
+      <change type="DELETED" beforePath="C:\Users\mch\git\ubi\core\src\ubi\log\Log.scala" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\mch\git\ubi\core\src\ubi\log\LogLevel.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/ubi/core/Globals.scala" afterPath="$PROJECT_DIR$/core/src/ubi/core/Globals.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/ubi/core/Main.scala" afterPath="$PROJECT_DIR$/core/src/ubi/core/Main.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/ubi/core/PluginHandler.scala" afterPath="$PROJECT_DIR$/core/src/ubi/core/PluginHandler.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/ubi/core/micclient/MicClient.scala" afterPath="$PROJECT_DIR$/core/src/ubi/core/micclient/MicClient.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/ubi/core/voicecommand/VoiceCommandModule.scala" afterPath="$PROJECT_DIR$/core/src/ubi/core/voicecommand/VoiceCommandModule.scala" />
@@ -70,19 +80,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PluginHandler.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/ubi/core/PluginHandler.scala">
+      <file leaf-file-name="application.conf" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
+            <state line="8" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="1.2612612">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MicClient.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SystemHandler.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/ubi/core/SystemHandler.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="21" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PluginHandler.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/ubi/core/PluginHandler.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MicClient.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/ubi/core/micclient/MicClient.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="19" selection-start="541" selection-end="541" vertical-scroll-proportion="3.1531532">
+            <state line="5" column="0" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,7 +119,7 @@
       <file leaf-file-name="VoiceCommandModule.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/ubi/core/voicecommand/VoiceCommandModule.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="63" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
+            <state line="7" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,7 +128,7 @@
       <file leaf-file-name="WeatherApp.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/ubi/plugins/WeatherApp.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -127,22 +155,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/core/ubi/core/PluginHandler.scala" />
-        <option value="$PROJECT_DIR$/src/core/ubi/core/micclient/MicClient.scala" />
-        <option value="$PROJECT_DIR$/src/core/ubi/core/voicecommand/VoiceCommandModule.scala" />
-        <option value="$PROJECT_DIR$/src/core/ubi/core/PluginBase.scala" />
-        <option value="$PROJECT_DIR$/src/core/ubi/core/LocationService.scala" />
         <option value="$PROJECT_DIR$/core/src/ubi/core/micclient/DataPacket.scala" />
-        <option value="$PROJECT_DIR$/core/src/ubi/core/Globals.scala" />
-        <option value="$PROJECT_DIR$/core/src/ubi/core/PluginBase.scala" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/core/src/ubi/core/micclient/Messages.scala" />
         <option value="$PROJECT_DIR$/core/src/ubi/core/voicecommand/Messages.scala" />
+        <option value="$PROJECT_DIR$/core/src/ubi/core/Globals.scala" />
         <option value="$PROJECT_DIR$/core/src/ubi/protocols/UbiMessage.scala" />
+        <option value="$PROJECT_DIR$/core/src/ubi/core/Log.scala" />
+        <option value="$PROJECT_DIR$/core/src/ubi/core/PluginBase.scala" />
+        <option value="$PROJECT_DIR$/core/src/ubi/core/CoreBase.scala" />
         <option value="$PROJECT_DIR$/core/src/ubi/plugins/WeatherApp.scala" />
         <option value="$PROJECT_DIR$/core/src/ubi/core/voicecommand/VoiceCommandModule.scala" />
         <option value="$PROJECT_DIR$/core/src/ubi/core/micclient/MicClient.scala" />
         <option value="$PROJECT_DIR$/core/src/ubi/core/PluginHandler.scala" />
+        <option value="$PROJECT_DIR$/core/src/ubi/core/Main.scala" />
+        <option value="$PROJECT_DIR$/application.conf" />
+        <option value="$PROJECT_DIR$/core/src/ubi/core/SystemHandler.scala" />
       </list>
     </option>
   </component>
@@ -181,6 +209,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -244,28 +282,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ubi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ubi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,16 +411,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,7 +440,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="preferences.editor" />
+    <property name="options.lastSelected" value="preferences.externalTools" />
     <property name="project.structure.side.proportion" value="0.17132868" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
@@ -603,7 +609,11 @@
       <created>1333815164604</created>
       <updated>1333815164604</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adding start signals">
+      <created>1333825818650</created>
+      <updated>1333825818650</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -688,7 +698,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Akka actors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding start signals" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -703,6 +713,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Added IntelliJ IDEA project folder" />
     <MESSAGE value="Adding Akka actors" />
+    <MESSAGE value="Adding start signals" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -712,88 +723,106 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="0.08454106" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/scala/src/scala-library-src.jar!/scala/actors/Actor.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="442" column="6" selection-start="13046" selection-end="13160" vertical-scroll-proportion="0.33333334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/voicecommand/Commands.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="0.28621495" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/Globals.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="96" selection-end="96" vertical-scroll-proportion="0.3113879" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.28621495" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/Main.scala">
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_25/jre/lib/rt.jar!/sun/misc/Unsafe.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="25" selection-end="25" vertical-scroll-proportion="0.12455516" />
+        <state line="295" column="23" selection-start="9233" selection-end="9281" vertical-scroll-proportion="0.33264887" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/ubi/protocols/UbiMessage.scala">
+    <entry file="jar://$PROJECT_DIR$/core/lib/akka-2.0/akka-actor-2.0.jar!/akka/jsr166y/ForkJoinWorkerThread.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.20443925">
+        <state line="19" column="16" selection-start="708" selection-end="708" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/core/lib/akka-2.0/akka-actor-2.0.jar!/akka/jsr166y/ForkJoinPool.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="39" selection-start="5059" selection-end="5059" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/Globals.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="96" selection-end="96" vertical-scroll-proportion="0.20443925">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/voicecommand/VoiceCommandModule.scala">
+    <entry file="file://$PROJECT_DIR$/core/src/ubi/protocols/UbiMessage.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="63" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
+        <state line="4" column="18" selection-start="89" selection-end="96" vertical-scroll-proportion="0.1635514">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/PluginBase.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="17" selection-end="17" vertical-scroll-proportion="0.04088785">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/CoreBase.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="23" selection-start="33" selection-end="41" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/Log.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="9" selection-start="75" selection-end="78" vertical-scroll-proportion="0.20443925">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/ubi/plugins/WeatherApp.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0">
+        <state line="2" column="0" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_25/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/voicecommand/VoiceCommandModule.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="23" selection-start="9233" selection-end="9281" vertical-scroll-proportion="0.33264887">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/core/lib/akka-2.0/akka-actor-2.0.jar!/akka/jsr166y/ForkJoinWorkerThread.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="16" selection-start="708" selection-end="708" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/core/lib/akka-2.0/akka-actor-2.0.jar!/akka/jsr166y/ForkJoinPool.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="39" selection-start="5059" selection-end="5059" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/PluginHandler.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
+        <state line="7" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/ubi/core/micclient/MicClient.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="19" selection-start="541" selection-end="541" vertical-scroll-proportion="3.1531532">
+        <state line="5" column="0" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/Main.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.07829182">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/PluginHandler.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/ubi/core/SystemHandler.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="21" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="1.2612612">
           <folding />
         </state>
       </provider>

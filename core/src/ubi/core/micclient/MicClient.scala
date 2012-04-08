@@ -1,15 +1,14 @@
 package ubi.core.micclient
 
 import scala.collection.immutable.List
-import akka.actor.{ActorRef, Actor}
-import ubi.protocols.{Start, UbiMessage}
-import ubi.log.Log
-import ubi.log.LogLevel._
+import akka.actor.ActorRef
+import ubi.protocols.{StartOk, Start, UbiMessage}
+import ubi.core.{PluginBase}
 
 case class DataPacket(words : List[String]) extends UbiMessage
 case class Subscribe() extends UbiMessage
 
-class MicClient extends Actor {
+class MicClient extends PluginBase {
     var _subscribers = List[ActorRef]();
 
     def notifySubscribers(list : List[String]) {
@@ -20,12 +19,12 @@ class MicClient extends Actor {
 
     def receive = {
         case Subscribe() => {
-            Log.log(INFO, "Subscribe received from " + sender);
+            log.info("Subscribe received from " + sender);
             _subscribers = sender :: _subscribers;
         }
         case Start() =>
-            Log.log(INFO, "Start received");
+            sender ! StartOk();
         case msg =>
-            Log.log(INFO, "Unknown data received, ignoring: " + msg);
+            log.info("Unknown data received, ignoring: " + msg);
     }
 }

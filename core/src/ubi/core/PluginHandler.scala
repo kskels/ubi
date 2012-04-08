@@ -4,18 +4,43 @@ import scala.collection.immutable.List
 import micclient.MicClient
 import ubi.plugins.WeatherApp
 import voicecommand.VoiceCommandModule
-import ubi.protocols.Start
-import akka.actor.{ActorRef, Props, ActorSystem}
+import akka.actor.{Actor, ActorRef, Props}
+import ubi.protocols.{StartOk, Error, Start}
 
-class PluginHandler {
-    def initialize() {
-        val system = ActorSystem("Ubi");
-        var actors = List[ActorRef]();
-        actors = system.actorOf(Props[MicClient], name = "MicClient") :: actors;
-        actors = system.actorOf(Props[VoiceCommandModule], name = "VoiceCommandModule") :: actors;
-        actors = system.actorOf(Props[WeatherApp], name = "WeatherApp") :: actors;
-        for (actor <- actors) {
+class PluginHandler extends CoreBase {
+    var _commander : ActorRef = null;
+    var _plugins = List[ActorRef]();
+    var _runningPlugins = List[ActorRef]();
+    var _failedPlugins = List[ActorRef]();
+
+    def handleStart() {
+        _plugins = context.actorOf(Props[MicClient], name = "MicClient") :: _plugins;
+        _plugins = context.actorOf(Props[VoiceCommandModule], name = "VoiceCommandModule") :: _plugins;
+        _plugins = context.actorOf(Props[WeatherApp], name = "WeatherApp") :: _plugins;
+        for (actor <- _plugins) {
             actor ! Start();
         }
+    }
+
+    def checkStartOk() {
+        if (_runningPlugins.length + _failedPlugins.length < _plugins.length) return;
+        _commander ! StartOk();
+    }
+
+    def receive = {
+        case Start() => {
+            _commander = sender;
+            handleStart();
+        }
+        case StartOk() => {
+            _runningPlugins = sender :: _runningPlugins;
+            checkStartOk();
+        }
+        case Error(message) => {
+            _failedPlugins = sender :: _failedPlugins;
+            checkStartOk();
+        }
+        case msg =>
+            log.info("Unknown data received, ignoring: " + msg);
     }
 }
