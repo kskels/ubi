@@ -1,0 +1,31 @@
+#! /usr/bin/env python
+# encoding: utf-8
+
+APPNAME = 'ubi'
+VERSION = '0.1'
+
+out = 'bin'
+
+def options(opt):
+  opt.load('compiler_cxx')
+
+def configure(conf):
+  conf.load('compiler_cxx')
+
+def build(bld):
+  bld.program(
+    source='main.cpp',
+    target='ubi',
+    includes = [
+      '/opt/sphinx/pocket/0.7/include/pocketsphinx',
+      '/opt/sphinx/pocket/0.7/include',
+      '/opt/sphinx/base/0.7/include/sphinxbase',
+      '/opt/sphinx/base/0.7/include'
+    ],
+    libpath = ['/opt/sphinx/base/0.7/lib', '/opt/sphinx/pocket/0.7/lib'],
+    lib = ['pocketsphinx', 'sphinxbase', 'sphinxad']
+  )
+
+def dist(ctx):
+  ctx.algo = 'tar.gz'
+
