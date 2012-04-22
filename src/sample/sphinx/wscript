@@ -9,11 +9,11 @@ out = 'bin'
 def options(opt):
   opt.load('compiler_cxx')
 
-def configure(conf):
-  conf.load('compiler_cxx')
+def configure(ctx):
+  ctx.load('compiler_cxx')
 
-# defines for sphinx
-lib_sphinx = ['pocketsphinx', 'sphinxbase', 'sphinxad']
+# sphinx
+lib_sphinx = ['pocketsphinx', 'sphinxbase', 'sphinxad', 'boost_thread']
 libpath_sphinx = ['/opt/sphinx/base/0.7/lib', '/opt/sphinx/pocket/0.7/lib']
 include_sphinx = [
   '/opt/sphinx/pocket/0.7/include/pocketsphinx',
@@ -22,13 +22,13 @@ include_sphinx = [
   '/opt/sphinx/base/0.7/include'
 ]
 
-def build(bld):
-  bld.program(
+def build(ctx):
+  ctx.program(
     source='main.cpp',
     target='ubi',
     includes = include_sphinx,
     libpath = libpath_sphinx,
-    lib = lib_sphinx
+    lib = lib_sphinx 
   )
 
 def dist(ctx):
